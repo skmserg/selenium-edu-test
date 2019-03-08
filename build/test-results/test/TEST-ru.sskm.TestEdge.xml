@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.sskm.TestEdge" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-03-08T21:24:20" hostname="Deploy" time="3.3">
+  <properties/>
+  <testcase name="myFirstTest" classname="ru.sskm.TestEdge" time="3.3"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[[00:24:20.455] - Listening on http://localhost:1220/ 
+Mar 09, 2019 12:24:21 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+[00:24:23.024] - Stopping server.
+]]></system-err>
+</testsuite>
