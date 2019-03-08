@@ -31,6 +31,9 @@ public class FirstTest {
 //        driver = new ChromeDriver(options);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+        //работа без безопасного режима
+//        capabilities.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
+//        capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
         driver = new ChromeDriver(capabilities);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
