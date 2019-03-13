@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114caf12-7893-49cc-b9c5-5b495c7bb50b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -26,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="271">
+              <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="501">
+              <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -76,8 +82,8 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestOpera.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestIE.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" />
       </list>
     </option>
   </component>
@@ -350,16 +356,17 @@
       <option name="project" value="LOCAL" />
       <updated>1552429804524</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="renewal_HW4_2">
+      <created>1552514869749</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1552514869749</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestChrome_myFirstTestChrome - 2019.03.13 at 00h 06m 31s.xml">
-      <configuration name="TestChrome.myFirstTestChrome" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestChrome_myFirstTestChrome - 2019.03.13 at 00h 11m 51s.xml">
-      <configuration name="TestChrome.myFirstTestChrome" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="TestChrome - 2019.03.13 at 00h 16m 17s.xml">
       <configuration name="TestChrome" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -384,13 +391,18 @@
     <history-entry file="TestChrome_stickerTest - 2019.03.13 at 01h 29m 45s.xml">
       <configuration name="TestChrome.stickerTest" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="TestChrome_stickerTest - 2019.03.14 at 01h 06m 05s.xml">
+      <configuration name="TestChrome.stickerTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestFirefox_stickerTest - 2019.03.14 at 01h 07m 06s.xml">
+      <configuration name="TestFirefox.stickerTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.117359415" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -401,7 +413,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33180252" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.33068183" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -555,8 +567,8 @@
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/AuxTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="271">
+          <caret line="52" column="4" lean-forward="true" selection-start-line="52" selection-start-column="4" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -565,8 +577,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="501">
+          <caret line="57" column="5" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
