@@ -48,6 +48,15 @@ public class TestFirefox {
         }
     }
 
+    @Test
+    public void stickerTest(){
+        driver.get("http://localhost/litecart/en/rubber-ducks-c-1/");
+        List<WebElement> duckList = driver.findElements(By.cssSelector(".product"));
+        for(int i = 1; i < duckList.size(); i++){
+            assertTrue(isPresent(By.cssSelector(".sticker")));
+        }
+    }
+
     public boolean isPresent(By locator){
         try{
             driver.findElement(locator);
