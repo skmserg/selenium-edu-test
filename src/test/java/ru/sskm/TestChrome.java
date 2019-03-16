@@ -64,30 +64,26 @@ public class TestChrome {
         driver.findElement(By.name("login")).click();                          //       авторизации
         driver.findElement(By.cssSelector("li#app-:nth-child(3)")).click();    //выбираем в боковой панели Countries
 
+        int interruptCountry = 0;
         ArrayList<String> countriesList = new ArrayList<>(); //инициализируем лист для хранения имен стран
+
         WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
         List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
 
-        for(WebElement countryRow : countriesElementList){ //циклом проходим по списку строк
+        for(int i = 0; i < countriesElementList.size(); i++){ //циклом проходим по списку строк
+            WebElement countryRow = countriesElementList.get(i);
             List<WebElement> countryCellsList = countryRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
             countriesList.add(countryCellsList.get(4).getAttribute("textContent")); //заполняем список имен стран их именами вытаскивая из 4 элемента
 
             if(Integer.parseInt(countryCellsList.get(5).getAttribute("textContent")) > 0){ //проверяем количество зон у каждой страны, если больше 0
+                interruptCountry = Integer.parseInt(countryCellsList.get(2).getAttribute("textContent"));
                 countryCellsList.get(4).findElement(By.tagName("a")).click(); //нажимаем на ссылку
                 WebElement tableZones = driver.findElement(By.id("table-zones")); //по id находим элемент таблицу зон
                 List<WebElement> zonesElementList = tableZones.findElements(By.tagName("tr")); //создаем список из строк таблицы зон
                 List<String> zoneList = new ArrayList<>(); //инициалтзтруем список зон
 
-//                for(WebElement zoneRow : zonesElementList){ //циклом проходим по списку зон
-//                    List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td"));// input[name*='zones']")); //создаем и заполняем список ячейками в которых содержаться различные данные
-//
-//                    System.out.println(zoneCellsList.size());
-//                    zoneList.add(zoneCellsList.get(2).getAttribute("textContent"));
-//                    System.out.println(zoneCellsList.get(2).getAttribute("textContent"));
-//                }
-
-                for(int i = 1; i < zonesElementList.size() - 1; i++){ //циклом проходим по списку зон
-                    WebElement zoneRow = zonesElementList.get(i); //вытаскиваем строку таблицы, как WebElement
+                for(int j = 1; j < zonesElementList.size() - 1; j++){ //циклом проходим по списку зон
+                    WebElement zoneRow = zonesElementList.get(j); //вытаскиваем строку таблицы, как WebElement
                     List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых содержаться различные данные
                     zoneList.add(zoneCellsList.get(2).getAttribute("textContent")); //получаем наименование территории
                 }
@@ -95,16 +91,9 @@ public class TestChrome {
                 for(String zone : zoneList){ //проверяем сортировку в списке зон
                     compareTo(zone);
                 }
-
-                System.out.println(driver.findElement(By.cssSelector("[name=cancel]")).getAttribute("textContent"));// click();
                 driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
-
-//                Actions actions = new Actions(driver);
-//                WebElement buttonCancel = driver.findElement(By.cssSelector("[name=cancel]"));
-//                actions.moveToElement(buttonCancel).doubleClick();
-
             }
-
+            System.out.println(interruptCountry);
         }
         for(String country : countriesList){ //проверяем сортировку в списке стран
             compareTo(country);
