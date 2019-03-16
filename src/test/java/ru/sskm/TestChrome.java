@@ -9,14 +9,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-
 
 public class TestChrome {
 
@@ -26,12 +23,12 @@ public class TestChrome {
     @Before
     public void start(){
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
-    public void testChrome() {
+    public void listClickTest() {
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
@@ -57,6 +54,77 @@ public class TestChrome {
         for(int i = 1; i < duckList.size(); i++){
             assertTrue(isPresent(By.cssSelector(".sticker")));
         }
+    }
+
+    @Test
+    public void countriesTest(){
+        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+        driver.findElement(By.name("login")).click();                          //       авторизации
+        driver.findElement(By.cssSelector("li#app-:nth-child(3)")).click();    //выбираем в боковой панели Countries
+
+        ArrayList<String> countriesList = new ArrayList<>(); //инициализируем лист для хранения имен стран
+        WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
+        List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
+
+        for(WebElement countryRow : countriesElementList){ //циклом проходим по списку строк
+            List<WebElement> countryCellsList = countryRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
+            countriesList.add(countryCellsList.get(4).getAttribute("textContent")); //заполняем список имен стран их именами вытаскивая из 4 элемента
+
+            if(Integer.parseInt(countryCellsList.get(5).getAttribute("textContent")) > 0){ //проверяем количество зон у каждой страны, если больше 0
+                countryCellsList.get(4).findElement(By.tagName("a")).click(); //нажимаем на ссылку
+                WebElement tableZones = driver.findElement(By.id("table-zones")); //по id находим элемент таблицу зон
+                List<WebElement> zonesElementList = tableZones.findElements(By.tagName("tr")); //создаем список из строк таблицы зон
+                List<String> zoneList = new ArrayList<>(); //инициалтзтруем список зон
+
+//                for(WebElement zoneRow : zonesElementList){ //циклом проходим по списку зон
+//                    List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td"));// input[name*='zones']")); //создаем и заполняем список ячейками в которых содержаться различные данные
+//
+//                    System.out.println(zoneCellsList.size());
+//                    zoneList.add(zoneCellsList.get(2).getAttribute("textContent"));
+//                    System.out.println(zoneCellsList.get(2).getAttribute("textContent"));
+//                }
+
+                for(int i = 1; i < zonesElementList.size() - 1; i++){ //циклом проходим по списку зон
+                    WebElement zoneRow = zonesElementList.get(i); //вытаскиваем строку таблицы, как WebElement
+                    List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых содержаться различные данные
+                    zoneList.add(zoneCellsList.get(2).getAttribute("textContent")); //получаем наименование территории
+                }
+
+                for(String zone : zoneList){ //проверяем сортировку в списке зон
+                    compareTo(zone);
+                }
+
+                System.out.println(driver.findElement(By.cssSelector("[name=cancel]")).getAttribute("textContent"));// click();
+                driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
+
+//                Actions actions = new Actions(driver);
+//                WebElement buttonCancel = driver.findElement(By.cssSelector("[name=cancel]"));
+//                actions.moveToElement(buttonCancel).doubleClick();
+
+            }
+
+        }
+        for(String country : countriesList){ //проверяем сортировку в списке стран
+            compareTo(country);
+        }
+    }
+
+    @Test
+    public void conformityTest(){
+        driver.get("http://localhost/litecart/en/");
+        driver.findElement(By.id("box-campaigns")).findElement(By.tagName("a")).click();
+
+    }
+
+    public boolean compareTo(String current){
+        String previous ="";
+        current = "";
+        if(current.compareTo(previous) < 0)
+            return false;
+        else
+            return true;
     }
 
     public boolean isPresent(By locator){
