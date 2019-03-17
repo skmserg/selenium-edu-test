@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -31,13 +32,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="97" column="13" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+            <state relative-caret-position="167">
+              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#listClickTest#0;class#TestChrome#0" />
+                <element signature="method#stickerTest#0;class#TestChrome#0" />
+                <element signature="method#countriesTest#0;class#TestChrome#0" />
               </folding>
             </state>
           </provider>
@@ -46,10 +49,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+            <state relative-caret-position="459">
+              <caret line="150" column="78" selection-start-line="150" selection-start-column="78" selection-end-line="150" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="153" column="48" lean-forward="true" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#countriesTest#0;class#TestEdge#0" />
               </folding>
             </state>
           </provider>
@@ -78,12 +94,12 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/FirstTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/IE.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestOpera.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestIE.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/misc.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" />
       </list>
     </option>
   </component>
@@ -94,9 +110,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2262" />
-    <option name="y" value="284" />
-    <option name="width" value="1130" />
+    <option name="x" value="1673" />
+    <option name="width" value="854" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -159,6 +174,11 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.sskm" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -171,7 +191,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestChrome.countriesTest">
+  <component name="RunManager" selected="Gradle.TestEdge.conformityTest">
     <configuration name="TestChrome.conformityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -192,12 +212,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestChrome.countriesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestEdge.conformityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.countriesTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge.conformityTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -212,12 +232,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestChrome.stickerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestEdge.countriesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.stickerTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge.countriesTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -232,12 +252,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestChrome.testCountries" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestFirefox.conformityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.testCountries&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestFirefox.conformityTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -252,12 +272,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestFirefox.stickerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestFirefox.countriesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestFirefox.stickerTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestFirefox.countriesTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -274,11 +294,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.TestChrome.countriesTest" />
+        <item itemvalue="Gradle.TestEdge.conformityTest" />
+        <item itemvalue="Gradle.TestEdge.countriesTest" />
+        <item itemvalue="Gradle.TestFirefox.conformityTest" />
+        <item itemvalue="Gradle.TestFirefox.countriesTest" />
         <item itemvalue="Gradle.TestChrome.conformityTest" />
-        <item itemvalue="Gradle.TestChrome.testCountries" />
-        <item itemvalue="Gradle.TestChrome.stickerTest" />
-        <item itemvalue="Gradle.TestFirefox.stickerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -378,39 +398,53 @@
       <option name="project" value="LOCAL" />
       <updated>1552775004982</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="renewal_2_HW5">
+      <created>1552799530972</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1552799530972</updated>
+    </task>
+    <task id="LOCAL-00014" summary="renewal_3_HW5.2">
+      <created>1552805635521</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1552805635521</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 00h 11m 43s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_conformityTest - 2019.03.17 at 12h 02m 10s.xml">
+      <configuration name="TestChrome.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 00h 12m 06s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestFirefox_countriesTest - 2019.03.17 at 12h 12m 25s.xml">
+      <configuration name="TestFirefox.countriesTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 00h 46m 59s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestFirefox_conformityTest - 2019.03.17 at 12h 13m 12s.xml">
+      <configuration name="TestFirefox.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 00h 52m 11s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestFirefox_conformityTest - 2019.03.17 at 12h 13m 37s.xml">
+      <configuration name="TestFirefox.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 00h 59m 14s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestFirefox_conformityTest - 2019.03.17 at 12h 15m 16s.xml">
+      <configuration name="TestFirefox.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 01h 09m 10s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 12h 30m 28s.xml">
+      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 08h 07m 05s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestEdge_conformityTest - 2019.03.17 at 12h 31m 31s.xml">
+      <configuration name="TestEdge.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 08h 07m 07s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestEdge_conformityTest - 2019.03.17 at 12h 33m 06s.xml">
+      <configuration name="TestEdge.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 08h 07m 46s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestEdge_conformityTest - 2019.03.17 at 12h 33m 07s.xml">
+      <configuration name="TestEdge.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_countriesTest - 2019.03.17 at 08h 10m 41s.xml">
-      <configuration name="TestChrome.countriesTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestEdge_conformityTest - 2019.03.17 at 12h 33m 47s.xml">
+      <configuration name="TestEdge.conformityTest" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -418,9 +452,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1672" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1405868" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17298289" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -429,7 +462,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22954546" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22045454" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -439,7 +472,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5012225" side_tool="true" weight="0.27727273" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4987775" weight="0.27669346" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4987775" weight="0.27613637" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49938875" weight="0.3295063" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.33627203" />
@@ -507,7 +540,9 @@
     <MESSAGE value="renewal_HW4_2" />
     <MESSAGE value="add_HW5" />
     <MESSAGE value="renewal_HW5" />
-    <option name="LAST_COMMIT_MESSAGE" value="renewal_HW5" />
+    <MESSAGE value="renewal_2_HW5" />
+    <MESSAGE value="renewal_3_HW5.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="renewal_3_HW5.2" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -523,7 +558,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestOpera.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestIE.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/25.0-jre/30ade485699e7782cc2369b0e5d3d8e0bfc317c/guava-25.0-jre-sources.jar!/com/google/common/collect/SingletonImmutableBiMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -589,22 +623,35 @@
         <state relative-caret-position="-1683" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="97" column="13" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="13" />
+        <state relative-caret-position="459">
+          <caret line="150" column="78" selection-start-line="150" selection-start-column="78" selection-end-line="150" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="57" column="3" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
+        <state relative-caret-position="167">
+          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+          <folding>
+            <element signature="method#listClickTest#0;class#TestChrome#0" />
+            <element signature="method#stickerTest#0;class#TestChrome#0" />
+            <element signature="method#countriesTest#0;class#TestChrome#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="153" column="48" lean-forward="true" selection-start-line="153" selection-start-column="48" selection-end-line="153" selection-end-column="48" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#countriesTest#0;class#TestEdge#0" />
           </folding>
         </state>
       </provider>

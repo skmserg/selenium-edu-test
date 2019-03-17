@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
@@ -105,43 +104,62 @@ public class TestChrome {
     @Test
     public void conformityTest(){
         driver.get("http://localhost/litecart/en/");
-        WebElement campaignsSection = driver.findElement(By.id("box-campaigns"));
+
 
         Map<String, String> mapMainPage = new HashMap<>();
         Map<String, String> mapProductPage = new HashMap<>();
         String productName = "Product Name";
         String regularPrice = "Regular Price";
         String campaignPrice = "Campaign Price";
+        String colorRegularPrice = "Color of Regular Price";
+        String colorCampaignPrice = "Color of Campaign Price";
 
+        WebElement campaignsSection = driver.findElement(By.id("box-campaigns"));
         String productNameMainPage = campaignsSection.findElement(By.cssSelector(".name")).
                 getAttribute("textContent");
         String regularPriceMainPage = campaignsSection.findElement(By.cssSelector(".regular-price")).
                 getAttribute("textContent");
+        String colorRegularPriceMainPage = campaignsSection.findElement(By.cssSelector(".regular-price")).
+                getCssValue("color");
         String campaignPriceMainPage = campaignsSection.findElement(By.cssSelector(".campaign-price")).
                 getAttribute("textContent");
+        String colorCampaignPriceMainPage = campaignsSection.findElement(By.cssSelector(".campaign-price")).
+                getCssValue("color");
 
         mapMainPage.put(productName, productNameMainPage);
         mapMainPage.put(regularPrice, regularPriceMainPage);
         mapMainPage.put(campaignPrice, campaignPriceMainPage);
-        System.out.println(productNameMainPage + ", " + regularPriceMainPage + ", " + campaignPriceMainPage);
-        System.out.println(mapMainPage);
-
+        mapMainPage.put(colorRegularPrice, colorRegularPriceMainPage);
+        mapMainPage.put(colorCampaignPrice, colorCampaignPriceMainPage);
 
         campaignsSection.findElement(By.cssSelector("a:first-child")).click();
         driver.findElement(By.cssSelector("h1"));
         String productNameProductPage = driver.findElement(By.cssSelector("h1")).getAttribute("textContent");
         String regularPriceProductPage = driver.findElement(By.cssSelector(".regular-price")).
                 getAttribute("textContent");
+        String colorRegularPriceProductPage = driver.findElement(By.cssSelector(".regular-price")).
+                getCssValue("color");
         String campaignPriceProductPage = driver.findElement(By.cssSelector(".campaign-price")).
                 getAttribute("textContent");
+        String colorCampaignPriceProductPage = driver.findElement(By.cssSelector(".campaign-price")).
+                getCssValue("color");
 
         mapProductPage.put(productName, productNameProductPage);
         mapProductPage.put(regularPrice, regularPriceProductPage);
         mapProductPage.put(campaignPrice, campaignPriceProductPage);
-        System.out.println(productNameProductPage + ", " + regularPriceProductPage + ", " + campaignPriceProductPage);
-        System.out.println(mapProductPage);
+        mapProductPage.put(colorRegularPrice, colorRegularPriceProductPage);
+        mapProductPage.put(colorCampaignPrice, colorCampaignPriceProductPage);
 
+        compareMap(mapMainPage, mapProductPage);
+    }
 
+    public boolean compareMap(Map<String, String> m, Map<String, String> n){
+        if(m.size() != n.size())
+            return false;
+        for(String key: m.keySet())
+            if(!m.get(key).equals((n.get(key))))
+                return false;
+            return true;
     }
 
     public boolean compareTo(String current){
