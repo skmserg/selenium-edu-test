@@ -105,7 +105,42 @@ public class TestChrome {
     @Test
     public void conformityTest(){
         driver.get("http://localhost/litecart/en/");
-        driver.findElement(By.id("box-campaigns")).findElement(By.tagName("a")).click();
+        WebElement campaignsSection = driver.findElement(By.id("box-campaigns"));
+
+        Map<String, String> mapMainPage = new HashMap<>();
+        Map<String, String> mapProductPage = new HashMap<>();
+        String productName = "Product Name";
+        String regularPrice = "Regular Price";
+        String campaignPrice = "Campaign Price";
+
+        String productNameMainPage = campaignsSection.findElement(By.cssSelector(".name")).
+                getAttribute("textContent");
+        String regularPriceMainPage = campaignsSection.findElement(By.cssSelector(".regular-price")).
+                getAttribute("textContent");
+        String campaignPriceMainPage = campaignsSection.findElement(By.cssSelector(".campaign-price")).
+                getAttribute("textContent");
+
+        mapMainPage.put(productName, productNameMainPage);
+        mapMainPage.put(regularPrice, regularPriceMainPage);
+        mapMainPage.put(campaignPrice, campaignPriceMainPage);
+        System.out.println(productNameMainPage + ", " + regularPriceMainPage + ", " + campaignPriceMainPage);
+        System.out.println(mapMainPage);
+
+
+        campaignsSection.findElement(By.cssSelector("a:first-child")).click();
+        driver.findElement(By.cssSelector("h1"));
+        String productNameProductPage = driver.findElement(By.cssSelector("h1")).getAttribute("textContent");
+        String regularPriceProductPage = driver.findElement(By.cssSelector(".regular-price")).
+                getAttribute("textContent");
+        String campaignPriceProductPage = driver.findElement(By.cssSelector(".campaign-price")).
+                getAttribute("textContent");
+
+        mapProductPage.put(productName, productNameProductPage);
+        mapProductPage.put(regularPrice, regularPriceProductPage);
+        mapProductPage.put(campaignPrice, campaignPriceProductPage);
+        System.out.println(productNameProductPage + ", " + regularPriceProductPage + ", " + campaignPriceProductPage);
+        System.out.println(mapProductPage);
+
 
     }
 
