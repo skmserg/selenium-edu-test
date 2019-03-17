@@ -113,6 +113,7 @@ public class TestChrome {
         String campaignPrice = "Campaign Price";
         String colorRegularPrice = "Color of Regular Price";
         String colorCampaignPrice = "Color of Campaign Price";
+        String fontWeightPrice = "Font Weight Price";
 
         WebElement campaignsSection = driver.findElement(By.id("box-campaigns"));
         String productNameMainPage = campaignsSection.findElement(By.cssSelector(".name")).
@@ -125,12 +126,15 @@ public class TestChrome {
                 getAttribute("textContent");
         String colorCampaignPriceMainPage = campaignsSection.findElement(By.cssSelector(".campaign-price")).
                 getCssValue("color");
+        String fontWeightCampaignPriceMainPage = campaignsSection.findElement(By.cssSelector(".campaign-price")).
+                getCssValue("font-weight");
 
         mapMainPage.put(productName, productNameMainPage);
         mapMainPage.put(regularPrice, regularPriceMainPage);
         mapMainPage.put(campaignPrice, campaignPriceMainPage);
         mapMainPage.put(colorRegularPrice, colorRegularPriceMainPage);
         mapMainPage.put(colorCampaignPrice, colorCampaignPriceMainPage);
+        mapMainPage.put(fontWeightPrice, fontWeightCampaignPriceMainPage);
 
         campaignsSection.findElement(By.cssSelector("a:first-child")).click();
         driver.findElement(By.cssSelector("h1"));
@@ -143,12 +147,15 @@ public class TestChrome {
                 getAttribute("textContent");
         String colorCampaignPriceProductPage = driver.findElement(By.cssSelector(".campaign-price")).
                 getCssValue("color");
+        String fontWeightCampaignPriceProductPage = driver.findElement(By.cssSelector(".campaign-price")).
+                getCssValue("font-weight");
 
         mapProductPage.put(productName, productNameProductPage);
         mapProductPage.put(regularPrice, regularPriceProductPage);
         mapProductPage.put(campaignPrice, campaignPriceProductPage);
         mapProductPage.put(colorRegularPrice, colorRegularPriceProductPage);
         mapProductPage.put(colorCampaignPrice, colorCampaignPriceProductPage);
+        mapProductPage.put(fontWeightPrice, fontWeightCampaignPriceProductPage);
 
         compareMap(mapMainPage, mapProductPage);
     }
