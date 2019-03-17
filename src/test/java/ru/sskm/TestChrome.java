@@ -67,10 +67,13 @@ public class TestChrome {
         int interruptCountry = 0;
         ArrayList<String> countriesList = new ArrayList<>(); //инициализируем лист для хранения имен стран
 
-        WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
-        List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
+        WebElement table = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
+        List<WebElement> counElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
 
-        for(int i = 0; i < countriesElementList.size(); i++){ //циклом проходим по списку строк
+        for(int i = 0; i < counElementList.size(); i++){ //циклом проходим по списку строк
+
+            WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
+            List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
             WebElement countryRow = countriesElementList.get(i);
             List<WebElement> countryCellsList = countryRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
             countriesList.add(countryCellsList.get(4).getAttribute("textContent")); //заполняем список имен стран их именами вытаскивая из 4 элемента
@@ -93,7 +96,6 @@ public class TestChrome {
                 }
                 driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
             }
-            System.out.println(interruptCountry);
         }
         for(String country : countriesList){ //проверяем сортировку в списке стран
             compareTo(country);
