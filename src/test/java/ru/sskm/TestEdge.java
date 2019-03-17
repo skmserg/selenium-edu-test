@@ -3,36 +3,35 @@ package ru.sskm;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertTrue;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class TestChrome {
+import static org.junit.Assert.assertTrue;
+
+public class TestEdge {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
     @Before
     public void start(){
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver = new EdgeDriver();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
-    public void listClickTest() {
+    public void listClickTest(){
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
-
         List<WebElement> listLiApp = driver.findElements(By.cssSelector("li#app-"));
         for (int i = 1; i < listLiApp.size() + 1; i++) {
             driver.findElement(By.cssSelector("li#app-:nth-child(" + i + ")")).click();
@@ -72,7 +71,7 @@ public class TestChrome {
         for(int i = 0; i < countElementList.size(); i++){ //циклом проходим по списку строк
 
             WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
-            List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
+            List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector("tr.row")); //создаем лист строк из таблицы
             WebElement countryRow = countriesElementList.get(i);
             List<WebElement> countryCellsList = countryRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
             countriesList.add(countryCellsList.get(4).getAttribute("textContent")); //заполняем список имен стран их именами вытаскивая из 4 элемента
@@ -166,7 +165,7 @@ public class TestChrome {
         for(String key: m.keySet())
             if(!m.get(key).equals((n.get(key))))
                 return false;
-            return true;
+        return true;
     }
 
     public boolean compareTo(String current){
@@ -192,7 +191,5 @@ public class TestChrome {
         driver.quit();
         driver = null;
     }
-
-
 
 }

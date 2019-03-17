@@ -68,9 +68,9 @@ public class TestFirefox {
         ArrayList<String> countriesList = new ArrayList<>(); //инициализируем лист для хранения имен стран
 
         WebElement table = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
-        List<WebElement> counElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
+        List<WebElement> countElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
 
-        for(int i = 0; i < counElementList.size(); i++){ //циклом проходим по списку строк
+        for(int i = 0; i < countElementList.size(); i++){ //циклом проходим по списку строк
 
             WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
             List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
