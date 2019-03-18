@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="114caf12-7893-49cc-b9c5-5b495c7bb50b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -36,15 +28,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+            <state relative-caret-position="227">
+              <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#listClickTest#0;class#TestChrome#0" />
                 <element signature="method#stickerTest#0;class#TestChrome#0" />
+                <element signature="method#conformityTest#0;class#TestChrome#0" />
+                <element signature="method#geoZoneTest#0;class#TestChrome#0" />
+                <element signature="method#compareMap#0;class#TestChrome#0" />
               </folding>
             </state>
           </provider>
@@ -63,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="178">
+              <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,7 +73,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/3.141.59/8e9423038552821844ba5f7713cc4c1e6d9835b7/selenium-api-3.141.59-sources.jar!/org/openqa/selenium/By.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="1309">
               <caret line="115" selection-start-line="115" selection-end-line="115" />
               <folding>
                 <element signature="e#4186#4187#0" expanded="true" />
@@ -114,8 +109,8 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestIE.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/misc.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" />
       </list>
     </option>
   </component>
@@ -126,8 +121,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1672" />
-    <option name="y" value="-8" />
+    <option name="x" value="250" />
+    <option name="y" value="156" />
     <option name="width" value="1085" />
     <option name="height" value="1027" />
   </component>
@@ -139,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,7 +173,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -208,13 +203,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestEdge.countriesTest">
-    <configuration name="TestEdge" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TestChrome.geoZoneTest">
+    <configuration name="TestChrome.geoZoneTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.geoZoneTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -229,12 +224,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestEdge.conformityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestEdge" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge.conformityTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -269,6 +264,26 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="TestEdge.geoZoneTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge.geoZoneTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="TestEdge.listClickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -289,33 +304,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestFirefox.conformityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestFirefox.conformityTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestChrome.geoZoneTest" />
+        <item itemvalue="Gradle.TestEdge.geoZoneTest" />
         <item itemvalue="Gradle.TestEdge.countriesTest" />
         <item itemvalue="Gradle.TestEdge" />
         <item itemvalue="Gradle.TestEdge.listClickTest" />
-        <item itemvalue="Gradle.TestEdge.conformityTest" />
-        <item itemvalue="Gradle.TestFirefox.conformityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -447,24 +442,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 21m 35s.xml">
-      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 21m 45s.xml">
-      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 22m 09s.xml">
-      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEdge - 2019.03.17 at 14h 22m 33s.xml">
-      <configuration name="TestEdge" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 24m 05s.xml">
-      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 26m 25s.xml">
-      <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
     <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 34m 48s.xml">
       <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -477,15 +454,33 @@
     <history-entry file="TestEdge_countriesTest - 2019.03.17 at 14h 37m 02s.xml">
       <configuration name="TestEdge.countriesTest" configurationId="GradleRunConfiguration" />
     </history-entry>
+    <history-entry file="TestEdge_geoZoneTest - 2019.03.18 at 22h 42m 17s.xml">
+      <configuration name="TestEdge.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestChrome_geoZoneTest - 2019.03.18 at 22h 43m 05s.xml">
+      <configuration name="TestChrome.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestChrome_geoZoneTest - 2019.03.18 at 22h 44m 20s.xml">
+      <configuration name="TestChrome.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestChrome_geoZoneTest - 2019.03.18 at 22h 45m 31s.xml">
+      <configuration name="TestChrome.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestChrome_geoZoneTest - 2019.03.18 at 22h 49m 21s.xml">
+      <configuration name="TestChrome.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestChrome_geoZoneTest - 2019.03.18 at 22h 55m 22s.xml">
+      <configuration name="TestChrome.geoZoneTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="2687000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1672" y="-8" width="1696" height="1036" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15464547" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.018337408" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -494,8 +489,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.2125" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39545456" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39545456" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -739,18 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#listClickTest#0;class#TestChrome#0" />
-            <element signature="method#stickerTest#0;class#TestChrome#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
@@ -764,7 +747,7 @@
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-api/3.141.59/8e9423038552821844ba5f7713cc4c1e6d9835b7/selenium-api-3.141.59-sources.jar!/org/openqa/selenium/By.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="1309">
           <caret line="115" selection-start-line="115" selection-end-line="115" />
           <folding>
             <element signature="e#4186#4187#0" expanded="true" />
@@ -774,10 +757,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="178">
+          <caret line="103" column="4" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="164" column="29" selection-start-line="164" selection-start-column="29" selection-end-line="164" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#listClickTest#0;class#TestChrome#0" />
+            <element signature="method#stickerTest#0;class#TestChrome#0" />
+            <element signature="method#conformityTest#0;class#TestChrome#0" />
+            <element signature="method#geoZoneTest#0;class#TestChrome#0" />
+            <element signature="method#compareMap#0;class#TestChrome#0" />
           </folding>
         </state>
       </provider>

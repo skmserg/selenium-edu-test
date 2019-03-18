@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
@@ -158,6 +159,54 @@ public class TestChrome {
         mapProductPage.put(fontWeightPrice, fontWeightCampaignPriceProductPage);
 
         compareMap(mapMainPage, mapProductPage);
+    }
+
+    @Test
+    public void geoZoneTest(){
+        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+        driver.findElement(By.name("login")).click();                          //       авторизации
+
+        driver.findElement(By.cssSelector("li#app-:nth-child(6)")).click();    //выбираем в боковой панели Geo Zones
+        int interruptGeoZone = 0;
+        ArrayList<String> geoZoneList = new ArrayList<>(); //инициализируем лист для хранения имен стран
+
+        WebElement table = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
+        List<WebElement> countElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
+
+        for(int i = interruptGeoZone; i < countElementList.size(); i++){
+            WebElement tableGeoZones = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
+            List<WebElement> geoZonesElementList = tableGeoZones.findElements(By.cssSelector("tr.row")); //создаем лист строк из таблицы
+            WebElement geoZoneRow = geoZonesElementList.get(i);
+            List<WebElement> geoZoneCellsList = geoZoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
+            interruptGeoZone = Integer.parseInt(geoZoneCellsList.get(1).getAttribute("textContent"));
+            geoZoneCellsList.get(2).findElement(By.tagName("a")).click(); //нажимаем на ссылку
+
+            WebElement tableZones = driver.findElement(By.id("table-zones")); //по id находим элемент таблицу зон
+            List<WebElement> zonesElementList = tableZones.findElements(By.tagName("tr")); //создаем список из строк таблицы зон
+            List<String> zoneList = new ArrayList<>(); //инициалтзтруем список зон
+
+            for(int j = 1; j < zonesElementList.size() - 1; j++){ //циклом проходим по списку зон
+                WebElement zoneRow = zonesElementList.get(j); //вытаскиваем строку таблицы, как WebElement
+                List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых содержаться различные данные
+                WebElement select = zoneCellsList.get(2).findElement(By.tagName("select")); //получаем наименование территории
+                Select selectZone = new Select(select);
+
+                WebElement selectedZone = selectZone.getFirstSelectedOption();
+                String selectedZoneName = selectedZone.getAttribute("textContent");
+                geoZoneList.add(selectedZoneName); //заполняем список имен стран их именами вытаскивая из 4 элемента
+                System.out.println(selectedZoneName);
+            }
+
+            for(String zone : geoZoneList){ //проверяем сортировку в списке зон
+                compareTo(zone);
+            }
+            driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
+        }
+
+
+
     }
 
     public boolean compareMap(Map<String, String> m, Map<String, String> n){
