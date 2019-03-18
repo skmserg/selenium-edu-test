@@ -133,9 +133,11 @@ public class TestChrome {
         mapMainPage.put(productName, productNameMainPage);
         mapMainPage.put(regularPrice, regularPriceMainPage);
         mapMainPage.put(campaignPrice, campaignPriceMainPage);
-        mapMainPage.put(colorRegularPrice, colorRegularPriceMainPage);
-        mapMainPage.put(colorCampaignPrice, colorCampaignPriceMainPage);
-        mapMainPage.put(fontWeightPrice, fontWeightCampaignPriceMainPage);
+//        mapMainPage.put(colorRegularPrice, colorRegularPriceMainPage);
+//        mapMainPage.put(colorCampaignPrice, colorCampaignPriceMainPage);
+//        mapMainPage.put(fontWeightPrice, fontWeightCampaignPriceMainPage);
+
+        compareString(colorRegularPriceMainPage, colorCampaignPriceMainPage);
 
         campaignsSection.findElement(By.cssSelector("a:first-child")).click();
         driver.findElement(By.cssSelector("h1"));
@@ -154,11 +156,18 @@ public class TestChrome {
         mapProductPage.put(productName, productNameProductPage);
         mapProductPage.put(regularPrice, regularPriceProductPage);
         mapProductPage.put(campaignPrice, campaignPriceProductPage);
-        mapProductPage.put(colorRegularPrice, colorRegularPriceProductPage);
-        mapProductPage.put(colorCampaignPrice, colorCampaignPriceProductPage);
-        mapProductPage.put(fontWeightPrice, fontWeightCampaignPriceProductPage);
+//        mapProductPage.put(colorRegularPrice, colorRegularPriceProductPage);
+//        mapProductPage.put(colorCampaignPrice, colorCampaignPriceProductPage);
+//        mapProductPage.put(fontWeightPrice, fontWeightCampaignPriceProductPage);
+
+//        mapMainPage.put(colorRegularPrice, colorRegularPriceMainPage);
+//        mapMainPage.put(colorCampaignPrice, colorCampaignPriceMainPage);
+//        mapMainPage.put(fontWeightPrice, fontWeightCampaignPriceMainPage);
 
         compareMap(mapMainPage, mapProductPage);
+
+        assertTrue(compareString(colorRegularPriceProductPage, colorCampaignPriceProductPage));
+        assertTrue(compareString(colorRegularPriceMainPage, colorCampaignPriceMainPage));
     }
 
     @Test
@@ -207,6 +216,13 @@ public class TestChrome {
 
 
 
+    }
+
+    public boolean compareString(String str1, String str2){
+        if(str1.equals(str2)){
+            return true;
+        }
+        return false;
     }
 
     public boolean compareMap(Map<String, String> m, Map<String, String> n){
