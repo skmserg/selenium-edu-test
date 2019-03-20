@@ -230,7 +230,7 @@ public class TestChrome {
         String country = "United States";
 
         formNameMap.put("tax_id", "11235");
-        formNameMap.put("company", "Horns hooves");
+        formNameMap.put("company", "Horns & hooves");
         formNameMap.put("firstname", "Ostap");
         formNameMap.put("lastname", "Bender");
         formNameMap.put("address1", "Malaya Arnautskaya");
@@ -255,13 +255,24 @@ public class TestChrome {
         ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('disabled');",
                 driver.findElement(By.cssSelector("select[name=zone_code]")));
 
-        ((JavascriptExecutor) driver).executeScript("arguments[0].type=text;",
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('type', 'text');",
                 driver.findElement(By.cssSelector("input[name=zone_code]")));
 
-        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
-        selectZoneCode.selectByIndex(1);
+//        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
+//        selectZoneCode.selectByIndex(1);
+
+        driver.findElement(By.cssSelector("input[name=zone_code]")).sendKeys("11235");
 
         driver.findElement(By.name("create_account")).click();
+
+        driver.findElement(By.cssSelector("#box-account li:nth-child(4) a")).click();
+
+        driver.get("http://localhost/litecart/en/"); //идем на страницу магазина
+        driver.findElement(By.cssSelector("input[name=email]")).sendKeys(formNameMap.get("email"));
+        driver.findElement(By.cssSelector("input[name=password]")).sendKeys(formNameMap.get("password"));
+        driver.findElement(By.cssSelector("button[name=login]")).click();
+        driver.findElement(By.cssSelector("#box-account li:nth-child(4) a")).click();
+
     }
 
     public boolean compareColor(String color1, String color2) {
