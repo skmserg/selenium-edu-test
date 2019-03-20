@@ -3,17 +3,20 @@ package ru.sskm;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.*;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+
+import java.awt.Color;
 
 public class TestChrome {
 
@@ -21,7 +24,7 @@ public class TestChrome {
     private WebDriverWait wait;
 
     @Before
-    public void start(){
+    public void start() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, 10);
@@ -48,16 +51,16 @@ public class TestChrome {
     }
 
     @Test
-    public void stickerTest(){
+    public void stickerTest() {
         driver.get("http://localhost/litecart/en/rubber-ducks-c-1/");
         List<WebElement> duckList = driver.findElements(By.cssSelector(".product"));
-        for(int i = 1; i < duckList.size(); i++){
+        for (int i = 1; i < duckList.size(); i++) {
             assertTrue(isPresent(By.cssSelector(".sticker")));
         }
     }
 
     @Test
-    public void countriesTest(){
+    public void countriesTest() {
         driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
         driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
         driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
@@ -70,7 +73,7 @@ public class TestChrome {
         WebElement table = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
         List<WebElement> countElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
 
-        for(int i = 0; i < countElementList.size(); i++){ //циклом проходим по списку строк
+        for (int i = 0; i < countElementList.size(); i++) { //циклом проходим по списку строк
 
             WebElement tableCountries = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
             List<WebElement> countriesElementList = tableCountries.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
@@ -78,32 +81,32 @@ public class TestChrome {
             List<WebElement> countryCellsList = countryRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых хранятся различные данные к странам
             countriesList.add(countryCellsList.get(4).getAttribute("textContent")); //заполняем список имен стран их именами вытаскивая из 4 элемента
 
-            if(Integer.parseInt(countryCellsList.get(5).getAttribute("textContent")) > 0){ //проверяем количество зон у каждой страны, если больше 0
+            if (Integer.parseInt(countryCellsList.get(5).getAttribute("textContent")) > 0) { //проверяем количество зон у каждой страны, если больше 0
                 interruptCountry = Integer.parseInt(countryCellsList.get(2).getAttribute("textContent"));
                 countryCellsList.get(4).findElement(By.tagName("a")).click(); //нажимаем на ссылку
                 WebElement tableZones = driver.findElement(By.id("table-zones")); //по id находим элемент таблицу зон
                 List<WebElement> zonesElementList = tableZones.findElements(By.tagName("tr")); //создаем список из строк таблицы зон
                 List<String> zoneList = new ArrayList<>(); //инициалтзтруем список зон
 
-                for(int j = 1; j < zonesElementList.size() - 1; j++){ //циклом проходим по списку зон
+                for (int j = 1; j < zonesElementList.size() - 1; j++) { //циклом проходим по списку зон
                     WebElement zoneRow = zonesElementList.get(j); //вытаскиваем строку таблицы, как WebElement
                     List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых содержаться различные данные
                     zoneList.add(zoneCellsList.get(2).getAttribute("textContent")); //получаем наименование территории
                 }
 
-                for(String zone : zoneList){ //проверяем сортировку в списке зон
+                for (String zone : zoneList) { //проверяем сортировку в списке зон
                     compareTo(zone);
                 }
                 driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
             }
         }
-        for(String country : countriesList){ //проверяем сортировку в списке стран
+        for (String country : countriesList) { //проверяем сортировку в списке стран
             compareTo(country);
         }
     }
 
     @Test
-    public void conformityTest(){
+    public void conformityTest() {
         driver.get("http://localhost/litecart/en/");
 
 
@@ -166,12 +169,14 @@ public class TestChrome {
 
         compareMap(mapMainPage, mapProductPage);
 
-        assertTrue(compareString(colorRegularPriceProductPage, colorCampaignPriceProductPage));
-        assertTrue(compareString(colorRegularPriceMainPage, colorCampaignPriceMainPage));
+        assertFalse(compareColor(colorRegularPriceProductPage, colorCampaignPriceProductPage));
+        assertFalse(compareColor(colorRegularPriceMainPage, colorCampaignPriceMainPage));
+
+
     }
 
     @Test
-    public void geoZoneTest(){
+    public void geoZoneTest() {
         driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
         driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
         driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
@@ -184,7 +189,7 @@ public class TestChrome {
         WebElement table = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
         List<WebElement> countElementList = table.findElements(By.cssSelector(".row")); //создаем лист строк из таблицы
 
-        for(int i = interruptGeoZone; i < countElementList.size(); i++){
+        for (int i = interruptGeoZone; i < countElementList.size(); i++) {
             WebElement tableGeoZones = driver.findElement(By.cssSelector(".dataTable")); //находим главный элемент таблицу
             List<WebElement> geoZonesElementList = tableGeoZones.findElements(By.cssSelector("tr.row")); //создаем лист строк из таблицы
             WebElement geoZoneRow = geoZonesElementList.get(i);
@@ -196,7 +201,7 @@ public class TestChrome {
             List<WebElement> zonesElementList = tableZones.findElements(By.tagName("tr")); //создаем список из строк таблицы зон
             List<String> zoneList = new ArrayList<>(); //инициалтзтруем список зон
 
-            for(int j = 1; j < zonesElementList.size() - 1; j++){ //циклом проходим по списку зон
+            for (int j = 1; j < zonesElementList.size() - 1; j++) { //циклом проходим по списку зон
                 WebElement zoneRow = zonesElementList.get(j); //вытаскиваем строку таблицы, как WebElement
                 List<WebElement> zoneCellsList = zoneRow.findElements(By.tagName("td")); //создаем и заполняем список ячейками в которых содержаться различные данные
                 WebElement select = zoneCellsList.get(2).findElement(By.tagName("select")); //получаем наименование территории
@@ -208,14 +213,71 @@ public class TestChrome {
                 System.out.println(selectedZoneName);
             }
 
-            for(String zone : geoZoneList){ //проверяем сортировку в списке зон
+            for (String zone : geoZoneList) { //проверяем сортировку в списке зон
                 compareTo(zone);
             }
             driver.findElement(By.cssSelector("span.button-set button[name='cancel']")).click();
         }
 
 
+    }
 
+    @Test
+    public void userRegistrationTest() {
+        driver.get("http://localhost/litecart/en/"); //идем на страницу магазина
+
+        driver.findElement(By.cssSelector("form table tr:last-child a")).click(); //вызов формы регистрации пользователя
+        Map<String, String> formNameMap = new HashMap<>(); //инициализируем словарь
+
+        String country = "United States";
+
+        formNameMap.put("tax_id", "11235");
+        formNameMap.put("company", "Horns hooves");
+        formNameMap.put("firstname", "Ostap");
+        formNameMap.put("lastname", "Bender");
+        formNameMap.put("address1", "Malaya Arnautskaya");
+        formNameMap.put("address2", "Brighton Beach");
+        formNameMap.put("postcode", "11235");
+        formNameMap.put("city", "Little Odessa");
+        formNameMap.put("email", "o.bender@hornsandhooves.com");
+        formNameMap.put("phone", "5551478");
+        formNameMap.put("password", "123");
+        formNameMap.put("confirmed_password", "123");
+
+        Select selectCountry = new Select(driver.findElement(By.tagName("select")));
+        selectCountry.selectByVisibleText(country);
+
+        for (Map.Entry<String, String> entry : formNameMap.entrySet()) {
+            driver.findElement(By.name(entry.getKey())).sendKeys(entry.getValue());
+        }
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].style.opacity=1;",
+                driver.findElement(By.cssSelector("table tr:nth-child(5) td:nth-child(2)")));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('disabled');",
+                driver.findElement(By.cssSelector("select[name=zone_code]")));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].type=text;",
+                driver.findElement(By.cssSelector("input[name=zone_code]")));
+
+//        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
+//        selectZoneCode.selectByIndex(1);
+
+        driver.findElement(By.name("create_account")).click();
+    }
+
+    public boolean compareColor(String color1, String color2) {
+
+        String[] hexValue = color1.
+                replace("rgba", "").replace(" ", "").split(",");
+        String[] hexValue1 = color2.
+                replace("rgba", "").replace(" ", "").split(",");
+
+        for (int i = 0; i < hexValue.length; i++)
+            if (hexValue[i] == hexValue1[i]) {
+                return true;
+            }
+            return false;
     }
 
     public boolean compareString(String str1, String str2){
