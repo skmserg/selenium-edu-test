@@ -268,13 +268,13 @@ public class TestChrome {
 
     public boolean compareColor(String color1, String color2) {
 
-        String[] hexValue = color1.
+        String[] colorRange = color1.
                 replace("rgba", "").replace(" ", "").split(",");
-        String[] hexValue1 = color2.
+        String[] colorRange1 = color2.
                 replace("rgba", "").replace(" ", "").split(",");
 
-        for (int i = 0; i < hexValue.length; i++)
-            if (hexValue[i] == hexValue1[i]) {
+        for (int i = 0; i < colorRange.length; i++)
+            if (colorRange[i] == colorRange1[i]) {
                 return true;
             }
             return false;
