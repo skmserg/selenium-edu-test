@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class TestEdge {
@@ -53,6 +54,20 @@ public class TestEdge {
         for(int i = 1; i < duckList.size(); i++){
             assertTrue(isPresent(By.cssSelector(".sticker")));
         }
+    }
+
+    public boolean compareColor(String color1, String color2) {
+
+        String[] colorRange = color1.
+                replace("rgba", "").replace(" ", "").split(",");
+        String[] colorRange1 = color2.
+                replace("rgba", "").replace(" ", "").split(",");
+
+        for (int i = 0; i < colorRange.length; i++)
+            if (colorRange[i] == colorRange1[i]) {
+                return true;
+            }
+        return false;
     }
 
     @Test
@@ -102,7 +117,7 @@ public class TestEdge {
     }
 
     @Test
-    public void conformityTest(){
+    public void conformityTest() {
         driver.get("http://localhost/litecart/en/");
 
 
@@ -165,8 +180,10 @@ public class TestEdge {
 
         compareMap(mapMainPage, mapProductPage);
 
-        assertTrue(compareString(colorRegularPriceProductPage, colorCampaignPriceProductPage));
-        assertTrue(compareString(colorRegularPriceMainPage, colorCampaignPriceMainPage));
+        assertFalse(compareColor(colorRegularPriceProductPage, colorCampaignPriceProductPage));
+        assertFalse(compareColor(colorRegularPriceMainPage, colorCampaignPriceMainPage));
+
+
     }
 
     @Test

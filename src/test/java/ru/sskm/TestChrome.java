@@ -16,8 +16,6 @@ import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
-import java.awt.Color;
-
 public class TestChrome {
 
     private WebDriver driver;
@@ -260,8 +258,8 @@ public class TestChrome {
         ((JavascriptExecutor) driver).executeScript("arguments[0].type=text;",
                 driver.findElement(By.cssSelector("input[name=zone_code]")));
 
-//        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
-//        selectZoneCode.selectByIndex(1);
+        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
+        selectZoneCode.selectByIndex(1);
 
         driver.findElement(By.name("create_account")).click();
     }
