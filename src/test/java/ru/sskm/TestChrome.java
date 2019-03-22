@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -227,7 +228,10 @@ public class TestChrome {
         driver.findElement(By.cssSelector("form table tr:last-child a")).click(); //вызов формы регистрации пользователя
         Map<String, String> formNameMap = new HashMap<>(); //инициализируем словарь
 
-        String country = "United States";
+        String country = "United States"; //выбиравем Country
+
+        String name = generateName(); //генерим имя (предполагаем, что домеен у всех будет один и генерим только первую чвсть email)
+        String email = name + "@hornsandhooves.com"; //еа основе сгенерированного имени и домена получаем email
 
         formNameMap.put("tax_id", "11235");
         formNameMap.put("company", "Horns & hooves");
@@ -237,7 +241,7 @@ public class TestChrome {
         formNameMap.put("address2", "Brighton Beach");
         formNameMap.put("postcode", "11235");
         formNameMap.put("city", "Little Odessa");
-        formNameMap.put("email", "o.bender@hornsandhooves.com");
+        formNameMap.put("email", email);
         formNameMap.put("phone", "5551478");
         formNameMap.put("password", "123");
         formNameMap.put("confirmed_password", "123");
@@ -273,6 +277,51 @@ public class TestChrome {
         driver.findElement(By.cssSelector("button[name=login]")).click();
         driver.findElement(By.cssSelector("#box-account li:nth-child(4) a")).click();
 
+    }
+
+//    @Test
+//    public void addNewProduct(){
+//        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+//        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+//        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+//        driver.findElement(By.name("login")).click();                          //       авторизации
+//
+//        driver.findElement(By.cssSelector("li#app-:nth-child(2)")).click();    //выбираем в боковой панели Catalog
+//
+//        driver.findElement(By.xpath("//a[contains(text(), 'Product')]")).click(); //нажимаем кнопку Add New Product
+//        driver.findElement(By.name("name[en]")).sendKeys("Bast Shoe"); //заполняем поле Name
+//        driver.findElement(By.name("code")).sendKeys("123456"); //заполняем поле Code
+//        driver.findElement(By.cssSelector("input[value='1-3']")).click(); //Выбираем Product Groups, Gender
+//        driver.findElement(By.name("quantity")).clear(); // очищаем поле Quantity
+//        driver.findElement(By.name("quantity")).sendKeys("13"); //заполняем поле Quantity
+//
+//        Select selectQuantityUnit = new Select(driver.findElement(By.name("quantity_unit_id"))); //выбор Quantity Unit
+//        selectQuantityUnit.selectByValue("1");
+//
+//        Select selectDeliveryStatus = new Select(driver.findElement(By.name("delivery_status_id"))); //выбор Delivery Status
+//        selectDeliveryStatus.selectByValue("1");
+//
+//        Select selectSoldOutStatus = new Select(driver.findElement(By.name("sold_out_status_id"))); //выбор Sold Out Status
+//        selectSoldOutStatus.selectByValue("1");
+//
+//        //src/sources/bast_shoe.jpg
+//        driver.findElement(By.name("new_images[]")).sendKeys("./src/sources/bast_shoe.jpg"); //добавление картинки
+//
+//        driver.findElement(By.name("save")).click();
+//    }
+
+
+    public static String generateName()
+    {
+        Random random = new Random();
+        String chars = "abcdefghijklmnopqrstuvwxyz"; //испоьзуем только строчные буквы английскго алфавита
+        int length = 8;
+        char[] text = new char[length];
+        for (int i = 0; i < length; i++)
+        {
+            text[i] = chars.charAt(random.nextInt(chars.length()));
+        }
+        return new String(text);
     }
 
     public boolean compareColor(String color1, String color2) {
