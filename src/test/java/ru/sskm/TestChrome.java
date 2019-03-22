@@ -279,40 +279,37 @@ public class TestChrome {
 
     }
 
-//    @Test
-//    public void addNewProduct(){
-//        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
-//        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
-//        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
-//        driver.findElement(By.name("login")).click();                          //       авторизации
-//
-//        driver.findElement(By.cssSelector("li#app-:nth-child(2)")).click();    //выбираем в боковой панели Catalog
-//
-//        driver.findElement(By.xpath("//a[contains(text(), 'Product')]")).click(); //нажимаем кнопку Add New Product
-//        driver.findElement(By.name("name[en]")).sendKeys("Bast Shoe"); //заполняем поле Name
-//        driver.findElement(By.name("code")).sendKeys("123456"); //заполняем поле Code
-//        driver.findElement(By.cssSelector("input[value='1-3']")).click(); //Выбираем Product Groups, Gender
-//        driver.findElement(By.name("quantity")).clear(); // очищаем поле Quantity
-//        driver.findElement(By.name("quantity")).sendKeys("13"); //заполняем поле Quantity
-//
-//        Select selectQuantityUnit = new Select(driver.findElement(By.name("quantity_unit_id"))); //выбор Quantity Unit
-//        selectQuantityUnit.selectByValue("1");
-//
-//        Select selectDeliveryStatus = new Select(driver.findElement(By.name("delivery_status_id"))); //выбор Delivery Status
-//        selectDeliveryStatus.selectByValue("1");
-//
-//        Select selectSoldOutStatus = new Select(driver.findElement(By.name("sold_out_status_id"))); //выбор Sold Out Status
-//        selectSoldOutStatus.selectByValue("1");
-//
-//        //src/sources/bast_shoe.jpg
-//        driver.findElement(By.name("new_images[]")).sendKeys("./src/sources/bast_shoe.jpg"); //добавление картинки
-//
-//        driver.findElement(By.name("save")).click();
-//    }
+    @Test
+    public void addNewProduct(){
+        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+        driver.findElement(By.name("login")).click();                          //       авторизации
+        driver.findElement(By.cssSelector("li#app-:nth-child(2)")).click();    //выбираем в боковой панели Catalog
+        //вкладка General
+        driver.findElement(By.xpath("//a[contains(text(), 'Product')]")).click(); //нажимаем кнопку Add New Product
+        driver.findElement(By.cssSelector("label input[value='1']")).click(); //выбираем Status Enabled
+        driver.findElement(By.name("name[en]")).sendKeys("Bast Shoe"); //заполняем поле Name
+        driver.findElement(By.name("code")).sendKeys("123456"); //заполняем поле Code
+        driver.findElement(By.cssSelector("input[value='1-3']")).click(); //Выбираем Product Groups, Gender
+        driver.findElement(By.name("quantity")).clear(); // очищаем поле Quantity
+        driver.findElement(By.name("quantity")).sendKeys("13"); //заполняем поле Quantity
+        Select selectQuantityUnit = new Select(driver.findElement(By.name("quantity_unit_id"))); //выбор Quantity Unit
+        selectQuantityUnit.selectByValue("1");
+        Select selectDeliveryStatus = new Select(driver.findElement(By.name("delivery_status_id"))); //выбор Delivery Status
+        selectDeliveryStatus.selectByValue("1");
+        Select selectSoldOutStatus = new Select(driver.findElement(By.name("sold_out_status_id"))); //выбор Sold Out Status
+        selectSoldOutStatus.selectByValue("1");
+        String filePath = new File("src/resources/bast_shoe.jpg").getAbsolutePath();
+        driver.findElement(By.name("new_images[]")).sendKeys(filePath); //добавление картинки
+        //вкладка Information
 
 
-    public static String generateName()
-    {
+        driver.findElement(By.name("save")).click(); //нажатие на кнопку Save
+    }
+
+
+    public static String generateName(){
         Random random = new Random();
         String chars = "abcdefghijklmnopqrstuvwxyz"; //испоьзуем только строчные буквы английскго алфавита
         int length = 8;

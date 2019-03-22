@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -232,6 +233,78 @@ public class TestEdge {
 
 
 
+    }
+
+    @Test
+    public void userRegistrationTest() {
+        driver.get("http://localhost/litecart/en/"); //идем на страницу магазина
+
+        driver.findElement(By.cssSelector("form table tr:last-child a")).click(); //вызов формы регистрации пользователя
+        Map<String, String> formNameMap = new HashMap<>(); //инициализируем словарь
+
+        String country = "United States"; //выбиравем Country
+
+        String name = generateName(); //генерим имя (предполагаем, что домеен у всех будет один и генерим только первую чвсть email)
+        String email = name + "@hornsandhooves.com"; //еа основе сгенерированного имени и домена получаем email
+
+        formNameMap.put("tax_id", "11235");
+        formNameMap.put("company", "Horns & hooves");
+        formNameMap.put("firstname", "Ostap");
+        formNameMap.put("lastname", "Bender");
+        formNameMap.put("address1", "Malaya Arnautskaya");
+        formNameMap.put("address2", "Brighton Beach");
+        formNameMap.put("postcode", "11235");
+        formNameMap.put("city", "Little Odessa");
+        formNameMap.put("email", email);
+        formNameMap.put("phone", "5551478");
+        formNameMap.put("password", "123");
+        formNameMap.put("confirmed_password", "123");
+
+        Select selectCountry = new Select(driver.findElement(By.tagName("select")));
+        selectCountry.selectByVisibleText(country);
+
+        for (Map.Entry<String, String> entry : formNameMap.entrySet()) {
+            driver.findElement(By.name(entry.getKey())).sendKeys(entry.getValue());
+        }
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].style.opacity=1;",
+                driver.findElement(By.cssSelector("table tr:nth-child(5) td:nth-child(2)")));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].removeAttribute('disabled');",
+                driver.findElement(By.cssSelector("select[name=zone_code]")));
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].setAttribute('type', 'text');",
+                driver.findElement(By.cssSelector("input[name=zone_code]")));
+
+//        Select selectZoneCode = new Select(driver.findElement(By.cssSelector("select[name='zone_code']")));
+//        selectZoneCode.selectByIndex(1);
+
+        driver.findElement(By.cssSelector("input[name=zone_code]")).sendKeys("11235");
+
+        driver.findElement(By.name("create_account")).click();
+
+        driver.findElement(By.cssSelector("#box-account li:nth-child(4) a")).click();
+
+        driver.get("http://localhost/litecart/en/"); //идем на страницу магазина
+        driver.findElement(By.cssSelector("input[name=email]")).sendKeys(formNameMap.get("email"));
+        driver.findElement(By.cssSelector("input[name=password]")).sendKeys(formNameMap.get("password"));
+        driver.findElement(By.cssSelector("button[name=login]")).click();
+        driver.findElement(By.cssSelector("#box-account li:nth-child(4) a")).click();
+
+    }
+
+
+
+    public static String generateName() {
+        Random random = new Random();
+        String chars = "abcdefghijklmnopqrstuvwxyz"; //испоьзуем только строчные буквы английскго алфавита
+        int length = 8;
+        char[] text = new char[length];
+        for (int i = 0; i < length; i++)
+        {
+            text[i] = chars.charAt(random.nextInt(chars.length()));
+        }
+        return new String(text);
     }
 
     public boolean compareString(String str1, String str2){
