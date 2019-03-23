@@ -9,10 +9,13 @@ import static org.junit.Assert.assertTrue;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
+import java.io.*;
+
 import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
@@ -285,9 +288,13 @@ public class TestChrome {
         driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
         driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
         driver.findElement(By.name("login")).click();                          //       авторизации
+
         driver.findElement(By.cssSelector("li#app-:nth-child(2)")).click();    //выбираем в боковой панели Catalog
-        //вкладка General
         driver.findElement(By.xpath("//a[contains(text(), 'Product')]")).click(); //нажимаем кнопку Add New Product
+
+        List<WebElement> tabs = driver.findElements(By.cssSelector(".tabs li a")); // список вкладок
+
+        //вкладка General
         driver.findElement(By.cssSelector("label input[value='1']")).click(); //выбираем Status Enabled
         driver.findElement(By.name("name[en]")).sendKeys("Bast Shoe"); //заполняем поле Name
         driver.findElement(By.name("code")).sendKeys("123456"); //заполняем поле Code
@@ -300,11 +307,45 @@ public class TestChrome {
         selectDeliveryStatus.selectByValue("1");
         Select selectSoldOutStatus = new Select(driver.findElement(By.name("sold_out_status_id"))); //выбор Sold Out Status
         selectSoldOutStatus.selectByValue("1");
-        String filePath = new File("src/resources/bast_shoe.jpg").getAbsolutePath();
-        driver.findElement(By.name("new_images[]")).sendKeys(filePath); //добавление картинки
+        String imgFilePath = new File("src/resources/bast_shoe.jpg").getAbsolutePath();
+        driver.findElement(By.name("new_images[]")).sendKeys(imgFilePath); //добавление картинки
         //вкладка Information
+        tabs.get(1).click(); //выбираем вторую по счету вкладку Information
+        new WebDriverWait(driver, 60).
+                until(ExpectedConditions.presenceOfElementLocated(By.name("manufacturer_id")));
+        Select selectManufacturer = new Select(driver.findElement(By.name("manufacturer_id"))); //выбор Manufacturer
+        selectManufacturer.selectByVisibleText("ACME Corp."); //заполнение поля Manufacturer
+        driver.findElement(By.name("keywords")).sendKeys("keywords"); //заполнение поля Keywords
+        driver.findElement(By.name("short_description[en]")).
+                sendKeys("Traditional footwear of the forest areas of Northern Europe"); //заполнение поля Short Description
+        String textFilePath = new File("src/resources/description.txt").getAbsolutePath(); //путь к файлу с описанием
+        //заполнение поле Description
+        try{
+            BufferedReader readerText = new BufferedReader(new InputStreamReader(new
+                    FileInputStream(textFilePath)));
+            String lineText;
+            while((lineText = readerText.readLine()) != null){
+                driver.findElement(By.cssSelector("div.trumbowyg-editor")).sendKeys(lineText);
+            }
+            readerText.close();
+        }catch(FileNotFoundException ex){
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        driver.findElement(By.name("head_title[en]")).sendKeys("Bast Shoe");
 
+        //вкладка Prices
+        tabs.get(3).click(); //выбираем четвертую по счету вкладку Prices
+        new WebDriverWait(driver, 60).
+                until(ExpectedConditions.presenceOfElementLocated(By.name("purchase_price")));
+        driver.findElement(By.name("purchase_price")).clear();
+        driver.findElement(By.name("purchase_price")).sendKeys("99.90");
+        Select selectPurchasePrice = new Select(driver.findElement(By.name("purchase_price_currency_code"))); //Purchase Price
+        selectPurchasePrice.selectByVisibleText("Euros");
+        driver.findElement(By.name("prices[USD]")).sendKeys("29.000");
 
+        //сохранение
         driver.findElement(By.name("save")).click(); //нажатие на кнопку Save
     }
 
