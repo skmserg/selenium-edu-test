@@ -353,6 +353,57 @@ public class TestEdge {
         assertTrue(isPresent(By.xpath("//a[.='Bast Shoe']")));
     }
 
+    @Test
+    public void buyingNewProductTest() {
+
+        int nmbofProduct = 3; // количество товара
+
+        for(int i = 1; i <= nmbofProduct; i++) {
+            driver.get("http://localhost/litecart/en/"); //идем на страницу магазина
+            driver.findElements(By.cssSelector("a.link .image")).get(0).click(); //выбираем первый товар из списка
+
+            //проверка на наличие опции выбора размера
+            if (driver.findElements(By.name("options[Size]")).size() > 0) {
+                Select selectSize = new Select(driver.findElement(By.name("options[Size]")));
+                selectSize.selectByValue("Small");
+            }
+
+            driver.findElement(By.name("add_cart_product")).click(); //нажимаем на добавить товар
+
+            //ожидаем обновления карзины путем увеличения количества товаров в ней
+            new WebDriverWait(driver, 30).until(ExpectedConditions.
+                    textToBePresentInElementLocated(By.cssSelector("span.quantity"),
+                            Integer.toString(i))); //quantityProducts + 1)));
+
+        }
+        //заходим в корзину
+        driver.findElement(By.xpath("//a[contains(text(), 'Checkout')]")).click(); //нажатие на Checkout
+
+
+        //находим элмент отвечающий в таблицке за количество товара в корзине
+        List<WebElement> tableQuantityList =
+                driver.findElements(By.cssSelector("table.dataTable tr"));
+
+        for (int i = 1; i <= (tableQuantityList.size() - 5); i++) {
+            tableQuantityList.get(i); //элемент таблицы
+
+            //ожидаем кнопку удаления
+            new WebDriverWait(driver, 5).
+                    until(ExpectedConditions.presenceOfElementLocated(By.name("remove_cart_item")));
+
+            driver.findElement(By.name("remove_cart_item")).click(); //нажимаем на удалить товар
+
+            // ожидаем удаления элемента отвечающего за первый элемент списка
+            new WebDriverWait(driver, 10).until(ExpectedConditions.
+                    stalenessOf(tableQuantityList.get(i)));
+        }
+
+        new WebDriverWait(driver, 10).
+                until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(), 'Back')]")));
+        driver.findElement(By.xpath("//a[contains(text(), 'Back')]")).click();
+    }
+
+
     public static String generateName() {
         Random random = new Random();
         String chars = "abcdefghijklmnopqrstuvwxyz"; //испоьзуем только строчные буквы английскго алфавита
