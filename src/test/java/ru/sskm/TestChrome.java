@@ -283,7 +283,7 @@ public class TestChrome {
     }
 
     @Test
-    public void addNewProduct(){
+    public void addNewProductTest(){
         driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
         driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
         driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
@@ -347,6 +347,11 @@ public class TestChrome {
 
         //сохранение
         driver.findElement(By.name("save")).click(); //нажатие на кнопку Save
+
+        //проверка наличия
+        new WebDriverWait(driver, 60).
+                until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1")));
+        assertTrue(isPresent(By.xpath("//a[.='Bast Shoe']")));
     }
 
 

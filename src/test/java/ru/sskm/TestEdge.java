@@ -59,8 +59,6 @@ public class TestEdge {
         }
     }
 
-
-
     @Test
     public void countriesTest(){
         driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
@@ -284,7 +282,7 @@ public class TestEdge {
     }
 
     @Test
-    public void addNewProduct(){
+    public void addNewProductTest (){
         driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
         driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
         driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
@@ -348,6 +346,11 @@ public class TestEdge {
 
         //сохранение
         driver.findElement(By.name("save")).click(); //нажатие на кнопку Save
+
+        //проверка наличия
+        new WebDriverWait(driver, 60).
+                until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("h1")));
+        assertTrue(isPresent(By.xpath("//a[.='Bast Shoe']")));
     }
 
     public static String generateName() {
@@ -415,5 +418,4 @@ public class TestEdge {
         driver.quit();
         driver = null;
     }
-
 }
