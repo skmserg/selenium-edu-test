@@ -6,11 +6,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsToBe;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
@@ -401,6 +403,36 @@ public class TestChrome {
             new WebDriverWait(driver, 10).
                     until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(), 'Back')]")));
             driver.findElement(By.xpath("//a[contains(text(), 'Back')]")).click();
+    }
+
+    @Test
+    public void openNewWindowTest(){
+        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+        driver.findElement(By.name("login")).click();                          //       авторизации
+        driver.findElement(By.cssSelector("li#app-:nth-child(3)")).click();    //выбираем в боковой панели Countries
+        String country = "Russian Federation"; //задаем страну
+        driver.findElement(By.xpath("//a[contains(text(), '" + country +"')]")).click(); //заходим внутрь
+        String mainWindow = driver.getWindowHandle(); //получаем заголовок текущего окна
+
+        List<WebElement> exLinkList = driver.findElements(By.cssSelector(".fa-external-link")); //создаем лист внешних ссылок
+
+        for(WebElement linkElement : exLinkList) { //циклом проходим по всем ссылкам
+            linkElement.click(); //открывает новое окно
+            Set<String> openWindows = driver.getWindowHandles(); //получаем список открыиых окон
+            new WebDriverWait(driver, 30).until(numberOfWindowsToBe(openWindows.size())); //ожидаем открытия окон
+            for (String window : openWindows) { //циклом проходим по вем открытым окнам
+                if (!window.equals(mainWindow)) {
+                    driver.switchTo().window(window); //переключаемся во вновь открытое окно
+                    driver.getWindowHandle(); //проверяем какое окно текущее
+                    driver.close();
+                    openWindows = driver.getWindowHandles(); //получаем список открыиых окон
+                    new WebDriverWait(driver, 30).until(numberOfWindowsToBe(openWindows.size()));
+                    driver.switchTo().window(mainWindow);
+                }
+            }
+        }
     }
 
 
