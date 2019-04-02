@@ -11,10 +11,7 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestChrome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestEdge.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestEdge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/ru/sskm/TestFirefox.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -50,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="424" selection-start-line="424" selection-end-line="424" />
+            <state relative-caret-position="204">
+              <caret line="474" column="32" lean-forward="true" selection-start-line="474" selection-start-column="16" selection-end-line="474" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#TestChrome#0" />
@@ -62,13 +59,16 @@
                 <element signature="method#geoZoneTest#0;class#TestChrome#0" />
                 <element signature="method#userRegistrationTest#0;class#TestChrome#0" />
                 <element signature="method#addNewProductTest#0;class#TestChrome#0" />
-                <element signature="method#generateName#0;class#TestChrome#0" />
+                <element signature="method#buyingNewProductTest#0;class#TestChrome#0" />
+                <element signature="method#openNewWindowTest#0;class#TestChrome#0" />
+                <element signature="method#remoteServerTest#0;class#TestChrome#0" />
+                <element signature="e#27612#27990#1" />
                 <element signature="method#compareColor#0;class#TestChrome#0" />
                 <element signature="method#compareString#0;class#TestChrome#0" />
                 <element signature="method#compareMap#0;class#TestChrome#0" />
                 <element signature="method#compareTo#0;class#TestChrome#0" />
-                <element signature="method#stop#0;class#TestChrome#0" />
-                <marker date="1553630513718" expanded="true" signature="17398:18870" ph="..." />
+                <element signature="method#isPresent#0;class#TestChrome#0" />
+                <marker date="1554241771916" expanded="true" signature="17812:19284" ph="..." />
               </folding>
             </state>
           </provider>
@@ -77,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="798">
-              <caret line="405" column="5" selection-start-line="405" selection-start-column="5" selection-end-line="405" selection-end-column="5" />
+            <state relative-caret-position="952">
+              <caret line="436" column="5" selection-start-line="436" selection-start-column="5" selection-end-line="436" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#TestFirefox#0" />
@@ -88,7 +88,9 @@
                 <element signature="method#conformityTest#0;class#TestFirefox#0" />
                 <element signature="method#geoZoneTest#0;class#TestFirefox#0" />
                 <element signature="method#userRegistrationTest#0;class#TestFirefox#0" />
+                <element signature="method#addNewProductTest#0;class#TestFirefox#0" />
                 <element signature="method#buyingNewProductTest#0;class#TestFirefox#0" />
+                <element signature="method#openNewWindowTest#0;class#TestFirefox#0" />
                 <element signature="method#generateName#0;class#TestFirefox#0" />
                 <element signature="method#compareColor#0;class#TestFirefox#0" />
                 <element signature="method#compareString#0;class#TestFirefox#0" />
@@ -104,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="404" column="5" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
+            <state relative-caret-position="952">
+              <caret line="408" column="35" selection-start-line="408" selection-start-column="16" selection-end-line="408" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#start#0;class#TestEdge#0" />
@@ -117,6 +119,7 @@
                 <element signature="method#userRegistrationTest#0;class#TestEdge#0" />
                 <element signature="method#addNewProductTest#0;class#TestEdge#0" />
                 <element signature="method#buyingNewProductTest#0;class#TestEdge#0" />
+                <element signature="method#openNewWindowTest#0;class#TestEdge#0" />
                 <element signature="method#generateName#0;class#TestEdge#0" />
                 <element signature="method#compareColor#0;class#TestEdge#0" />
                 <element signature="method#compareString#0;class#TestEdge#0" />
@@ -175,8 +178,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1672" />
-    <option name="y" value="-8" />
+    <option name="x" value="356" />
+    <option name="y" value="189" />
     <option name="width" value="854" />
     <option name="height" value="1027" />
   </component>
@@ -188,8 +191,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -242,16 +245,16 @@
     <property name="settings.editor.selected.configurable" value="http.proxy" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Git\selenium-edu-test\src\resources" />
-      <recent name="E:\Git\selenium-edu-test\src\sources" />
-      <recent name="E:\Git\selenium-edu-test\src\sources\images" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Git\selenium-edu-test\images" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ru.sskm" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Git\selenium-edu-test\images" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Git\selenium-edu-test\src\resources" />
+      <recent name="E:\Git\selenium-edu-test\src\sources" />
+      <recent name="E:\Git\selenium-edu-test\src\sources\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -266,13 +269,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.TestEdge.openNewWindowTest">
-    <configuration name="TestChrome.buyingNewProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.TestChrome.browserLogTest">
+    <configuration name="TestChrome.browserLogTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.buyingNewProductTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.browserLogTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -307,12 +310,12 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TestEdge.buyingNewProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TestChrome.remoteServerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestEdge.buyingNewProductTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;ru.sskm.TestChrome.remoteServerTest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -369,11 +372,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.TestChrome.browserLogTest" />
+        <item itemvalue="Gradle.TestChrome.remoteServerTest" />
         <item itemvalue="Gradle.TestEdge.openNewWindowTest" />
         <item itemvalue="Gradle.TestFirefox.openNewWindowTest" />
         <item itemvalue="Gradle.TestChrome.openNewWindowTest" />
-        <item itemvalue="Gradle.TestChrome.buyingNewProductTest" />
-        <item itemvalue="Gradle.TestEdge.buyingNewProductTest" />
       </list>
     </recent_temporary>
   </component>
@@ -585,39 +588,46 @@
       <option name="project" value="LOCAL" />
       <updated>1553371800150</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add_HW8">
+      <created>1553630713873</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1553630713873</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 46m 53s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 07m 28s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 49m 11s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 08m 00s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 51m 20s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 08m 33s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 54m 00s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 18m 04s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 58m 08s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 31m 36s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 58m 35s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 34m 33s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 22h 58m 36s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 34m 34s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 23h 00m 13s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 41m 32s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 23h 01m 00s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 42m 53s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TestChrome_openNewWindowTest - 2019.03.26 at 23h 02m 32s.xml">
-      <configuration name="TestChrome.openNewWindowTest" configurationId="GradleRunConfiguration" />
+    <history-entry file="TestChrome_browserLogTest - 2019.04.03 at 00h 46m 49s.xml">
+      <configuration name="TestChrome.browserLogTest" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
@@ -633,10 +643,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1672" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14731051" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07518338" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -646,7 +655,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.29204544" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3909091" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3909091" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32954547" />
@@ -655,7 +664,7 @@
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50183374" side_tool="true" weight="0.28636363" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49816626" weight="0.28636363" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="12" sideWeight="0.49816626" visible="true" weight="0.28636363" />
       <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49938875" weight="0.3295063" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.33627203" />
@@ -734,7 +743,8 @@
     <MESSAGE value="renawal_HW6.1" />
     <MESSAGE value="renawal_HW6.1,2" />
     <MESSAGE value="renawal_HW7" />
-    <option name="LAST_COMMIT_MESSAGE" value="renawal_HW7" />
+    <MESSAGE value="add_HW8" />
+    <option name="LAST_COMMIT_MESSAGE" value="add_HW8" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -951,47 +961,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#1464#1658#0" expanded="true" />
-            <element signature="e#1657#1658#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="404" column="5" selection-start-line="404" selection-start-column="5" selection-end-line="404" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#start#0;class#TestEdge#0" />
-            <element signature="method#listClickTest#0;class#TestEdge#0" />
-            <element signature="method#stickerTest#0;class#TestEdge#0" />
-            <element signature="method#countriesTest#0;class#TestEdge#0" />
-            <element signature="method#conformityTest#0;class#TestEdge#0" />
-            <element signature="method#geoZoneTest#0;class#TestEdge#0" />
-            <element signature="method#userRegistrationTest#0;class#TestEdge#0" />
-            <element signature="method#addNewProductTest#0;class#TestEdge#0" />
-            <element signature="method#buyingNewProductTest#0;class#TestEdge#0" />
-            <element signature="method#generateName#0;class#TestEdge#0" />
-            <element signature="method#compareColor#0;class#TestEdge#0" />
-            <element signature="method#compareString#0;class#TestEdge#0" />
-            <element signature="method#compareMap#0;class#TestEdge#0" />
-            <element signature="method#compareTo#0;class#TestEdge#0" />
-            <element signature="method#isPresent#0;class#TestEdge#0" />
-            <element signature="method#stop#0;class#TestEdge#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestFirefox.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="798">
-          <caret line="405" column="5" selection-start-line="405" selection-start-column="5" selection-end-line="405" selection-end-column="5" />
+        <state relative-caret-position="952">
+          <caret line="436" column="5" selection-start-line="436" selection-start-column="5" selection-end-line="436" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#TestFirefox#0" />
@@ -1001,7 +974,9 @@
             <element signature="method#conformityTest#0;class#TestFirefox#0" />
             <element signature="method#geoZoneTest#0;class#TestFirefox#0" />
             <element signature="method#userRegistrationTest#0;class#TestFirefox#0" />
+            <element signature="method#addNewProductTest#0;class#TestFirefox#0" />
             <element signature="method#buyingNewProductTest#0;class#TestFirefox#0" />
+            <element signature="method#openNewWindowTest#0;class#TestFirefox#0" />
             <element signature="method#generateName#0;class#TestFirefox#0" />
             <element signature="method#compareColor#0;class#TestFirefox#0" />
             <element signature="method#compareString#0;class#TestFirefox#0" />
@@ -1013,10 +988,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestEdge.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="408" column="35" selection-start-line="408" selection-start-column="16" selection-end-line="408" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#start#0;class#TestEdge#0" />
+            <element signature="method#listClickTest#0;class#TestEdge#0" />
+            <element signature="method#stickerTest#0;class#TestEdge#0" />
+            <element signature="method#countriesTest#0;class#TestEdge#0" />
+            <element signature="method#conformityTest#0;class#TestEdge#0" />
+            <element signature="method#geoZoneTest#0;class#TestEdge#0" />
+            <element signature="method#userRegistrationTest#0;class#TestEdge#0" />
+            <element signature="method#addNewProductTest#0;class#TestEdge#0" />
+            <element signature="method#buyingNewProductTest#0;class#TestEdge#0" />
+            <element signature="method#openNewWindowTest#0;class#TestEdge#0" />
+            <element signature="method#generateName#0;class#TestEdge#0" />
+            <element signature="method#compareColor#0;class#TestEdge#0" />
+            <element signature="method#compareString#0;class#TestEdge#0" />
+            <element signature="method#compareMap#0;class#TestEdge#0" />
+            <element signature="method#compareTo#0;class#TestEdge#0" />
+            <element signature="method#isPresent#0;class#TestEdge#0" />
+            <element signature="method#stop#0;class#TestEdge#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/InvokeMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/model/FrameworkMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#1464#1658#0" expanded="true" />
+            <element signature="e#1657#1658#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunBefores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        <state relative-caret-position="26">
+          <caret line="277" column="46" lean-forward="true" selection-start-line="277" selection-start-column="46" selection-end-line="277" selection-end-column="46" />
+          <folding>
+            <element signature="e#2922#2923#0" expanded="true" />
+            <element signature="e#2966#2967#0" expanded="true" />
+            <element signature="e#11040#11204#0" expanded="true" />
+            <element signature="e#11203#11204#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,8 +1076,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/sskm/TestChrome.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="424" selection-start-line="424" selection-end-line="424" />
+        <state relative-caret-position="204">
+          <caret line="474" column="32" lean-forward="true" selection-start-line="474" selection-start-column="16" selection-end-line="474" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#start#0;class#TestChrome#0" />
@@ -1048,13 +1088,16 @@
             <element signature="method#geoZoneTest#0;class#TestChrome#0" />
             <element signature="method#userRegistrationTest#0;class#TestChrome#0" />
             <element signature="method#addNewProductTest#0;class#TestChrome#0" />
-            <element signature="method#generateName#0;class#TestChrome#0" />
+            <element signature="method#buyingNewProductTest#0;class#TestChrome#0" />
+            <element signature="method#openNewWindowTest#0;class#TestChrome#0" />
+            <element signature="method#remoteServerTest#0;class#TestChrome#0" />
+            <element signature="e#27612#27990#1" />
             <element signature="method#compareColor#0;class#TestChrome#0" />
             <element signature="method#compareString#0;class#TestChrome#0" />
             <element signature="method#compareMap#0;class#TestChrome#0" />
             <element signature="method#compareTo#0;class#TestChrome#0" />
-            <element signature="method#stop#0;class#TestChrome#0" />
-            <marker date="1553630513718" expanded="true" signature="17398:18870" ph="..." />
+            <element signature="method#isPresent#0;class#TestChrome#0" />
+            <marker date="1554241771916" expanded="true" signature="17812:19284" ph="..." />
           </folding>
         </state>
       </provider>

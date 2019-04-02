@@ -10,16 +10,25 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.numberOfWindowsT
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.logging.LogType;
+import org.openqa.selenium.logging.LoggingPreferences;
+import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
 public class TestChrome {
 
@@ -435,6 +444,72 @@ public class TestChrome {
         }
     }
 
+    @Test
+    public void remoteServerTest() throws MalformedURLException {
+
+
+        DesiredCapabilities capaLinuxChrome = new DesiredCapabilities();
+        capaLinuxChrome.setPlatform(Platform.LINUX);
+        capaLinuxChrome.setBrowserName(BrowserType.CHROME);
+        WebDriver rdLinuxChrome = new RemoteWebDriver(new URL("http://192.168.196.1:4444/wd/hub/"), capaLinuxChrome);
+        rdLinuxChrome.get("http://yandex.ru");
+
+        DesiredCapabilities capaLinuxFF = new DesiredCapabilities();
+        capaLinuxFF.setPlatform(Platform.LINUX);
+        capaLinuxFF.setBrowserName(BrowserType.FIREFOX);
+        WebDriver rdLinuxFF = new RemoteWebDriver(new URL("http://192.168.196.1:4444/wd/hub/"), capaLinuxFF);
+        rdLinuxFF.get("http://google.com");
+
+        DesiredCapabilities capaWinChrome = new DesiredCapabilities();
+        capaWinChrome.setPlatform(Platform.WIN10);
+        capaWinChrome.setBrowserName(BrowserType.CHROME);
+        WebDriver rdWinChrome = new RemoteWebDriver(new URL("http://192.168.196.1:4444/wd/hub/"), capaWinChrome);
+        rdWinChrome.get("http://ya.ru");
+
+        rdLinuxChrome.quit();
+        rdLinuxFF.quit();
+        rdWinChrome.quit();
+    }
+
+    @Test
+    public void browserLogTest() {
+        DesiredCapabilities cap = DesiredCapabilities.chrome();
+        LoggingPreferences logPrefs = new LoggingPreferences();
+        logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
+        cap.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
+
+        driver = new EventFiringWebDriver(new ChromeDriver(cap));
+
+        driver.get("http://localhost/litecart/admin/"); //идем на страницу магазина
+        driver.findElement(By.name("username")).sendKeys("admin"); //логинимся
+        driver.findElement(By.name("password")).sendKeys("admin"); //   в форме
+        driver.findElement(By.name("login")).click();                          //       авторизации
+
+        driver.findElement(By.cssSelector("li#app-:nth-child(2)")).click();    //выбираем в боковой панели Catalog
+
+        driver.findElement(By.
+                cssSelector("a[href='http://localhost/litecart/admin/?app=catalog&doc=catalog&category_id=1']")).click(); //нажимаем ссылку
+
+        if (driver.findElements(By.xpath("//a[contains(text(), 'Subcategory')]")).size() > 0) {
+            List<WebElement> subcategoryList = driver.findElements(By.xpath("//a[contains(text(), 'Subcategory')]"));
+            for (WebElement elSub : subcategoryList)
+                elSub.click();
+        }
+
+        List<WebElement> elementsRowList = driver.findElements(By.cssSelector("tr.row"));
+        for (int i = 0; i < elementsRowList.size(); i++) {
+            elementsRowList = driver.findElements(By.cssSelector("tr.row"));
+            if (elementsRowList.get(i).findElements(By.cssSelector("img")).size() > 0) {
+                elementsRowList.get(i).findElement(By.cssSelector("a")).click();
+
+                driver.manage().logs().get("browser").forEach(l -> System.out.println(l));
+
+                driver.findElement(By.name("cancel")).click();
+            }
+        }
+        driver.quit();
+        driver = null;
+    }
 
     public static String generateName(){
         Random random = new Random();
